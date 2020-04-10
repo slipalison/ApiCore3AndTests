@@ -6,7 +6,6 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
-using static Newtonsoft.Json.JsonConvert;
 
 namespace ApiCore3AndTests.Test
 {

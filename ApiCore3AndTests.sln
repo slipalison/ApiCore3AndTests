@@ -17,9 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCore3AndTests.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCore3AndTests.Infra", "src\ApiCore3AndTests.Infra\ApiCore3AndTests.Infra.csproj", "{1162B325-77E2-4DD8-ABC6-A1A07553C841}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiCore3AndTests.Client", "src\ApiCore3AndTests.Client\ApiCore3AndTests.Client.csproj", "{5277D009-D41D-4832-9E3B-AE2E2C8560DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCore3AndTests.Client", "src\ApiCore3AndTests.Client\ApiCore3AndTests.Client.csproj", "{5277D009-D41D-4832-9E3B-AE2E2C8560DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiCore3AndTests.Domain.Shared", "src\ApiCore3AndTests.Domain.Shared\ApiCore3AndTests.Domain.Shared.csproj", "{71ED1DC6-4F01-4BB6-A43A-6ABE2FF84342}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiCore3AndTests.Domain.Shared", "src\ApiCore3AndTests.Domain.Shared\ApiCore3AndTests.Domain.Shared.csproj", "{71ED1DC6-4F01-4BB6-A43A-6ABE2FF84342}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8FB135C2-2B5E-4662-AD97-F89ADEFDBB52}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
