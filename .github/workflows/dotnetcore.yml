@@ -20,7 +20,7 @@ jobs:
       - name: Build solution
         run: |
           git submodule update --init --recursive
-          dotnet restore Responses.sln
+          dotnet restore ApiCore3AndTests.sln
           dotnet build -c Release src/ApiCore3AndTests/ApiCore3AndTests.csproj
 
       - name: Run unit tests
