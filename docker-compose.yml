@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  apicore3andtests.api:
+    image: ${DOCKER_REGISTRY-}apicore3andtestsapi
+    build:
+      context: .
+      dockerfile: ApiCore3AndTests.Api/Dockerfile
+    depends_on:
+      - db
+      - elk
+    environment:
+      log.path: "http://elk:9200/"
+      elastic.index: "apicore3andtests.api"
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "FkcS7GDBbK"
+      ACCEPT_EULA: "Y"
+      TZ: "America/Sao_Paulo"
+    ports:
+      - "1433:1433"
+  
+  elk:
+    image: sebp/elk
+    ports:
+      - "5601:5601"
+      - "9900:9200"
+      - "5044:5044"
