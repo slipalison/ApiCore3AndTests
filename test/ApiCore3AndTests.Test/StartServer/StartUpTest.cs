@@ -10,9 +10,9 @@ using System.Reflection;
 
 namespace ApiCore3AndTests.Test.StartServer
 {
-    public class StartUpTest : Api.Startup
+    public class StartupTest : Api.Startup
     {
-        public StartUpTest(IConfiguration configuration, IWebHostEnvironment environment) : base(configuration, environment)
+        public StartupTest(IConfiguration configuration, IWebHostEnvironment environment) : base(configuration, environment)
         {
         }
 
@@ -39,6 +39,7 @@ namespace ApiCore3AndTests.Test.StartServer
             {
                 x.UseSqlite(inMemorySqlite);
             });
+            services.AddDistributedMemoryCache();
             base.ConfigureServices(services);
         }
     }

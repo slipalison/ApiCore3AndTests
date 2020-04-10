@@ -40,6 +40,10 @@ namespace ApiCore3AndTests.Infra.Configurations
                 .AddAuthenticationExtension(Configuration, Environment)
                 .AddAuthorizationExtension(Configuration)
                 .AddDependencyInjection(Configuration);
+            if (!Environment.EnvironmentName.Equals("Test"))
+            {
+                services.AddDistributedRedisCache(o => o.Configuration = Configuration.GetConnectionString("Redis"));
+            }
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

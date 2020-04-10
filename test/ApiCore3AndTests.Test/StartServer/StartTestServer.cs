@@ -14,11 +14,13 @@ namespace ApiCore3AndTests.Test.StartServer
         public StartTestServer()
         {
             _hostBuilder = new HostBuilder()
-            .ConfigureWebHost(webHost =>
-            {
-                webHost.UseTestServer();
-                webHost.UseStartup<StartUpTest>();
-            });
+                .UseEnvironment("Test")
+                .ConfigureWebHost(webHost =>
+                {
+                    webHost.UseTestServer();
+
+                    webHost.UseStartup<StartupTest>();
+                });
 
             _host = _hostBuilder.Start();
 

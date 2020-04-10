@@ -15,20 +15,16 @@ namespace ApiCore3AndTests.Client.V1
         {
         }
 
-        public async Task<Result> CreateWeatherForecast(WeatherForecastIncludeCommand weatherForecastCommand, string correlationId, CancellationToken cancellationToken = default)
-        {
-            return await FlurlRequest("/api/v1/weatherforecast", correlationId)
+        public async Task<Result> CreateWeatherForecast(WeatherForecastIncludeCommand weatherForecastCommand, string correlationId, CancellationToken cancellationToken = default) =>
+            await FlurlRequest("/api/v1/weatherforecast", correlationId)
                 .AllowAnyHttpStatus()
                 .PostJsonAsync(weatherForecastCommand, cancellationToken)
                 .ReceiveResult();
-        }
 
-        public async Task<Result<IEnumerable<WeatherForecastIncludeCommand>>> GetAllWeatherForecast(string correlationId, CancellationToken cancellationToken = default)
-        {
-            return await FlurlRequest("/api/v1/weatherforecast", correlationId)
+        public async Task<Result<IEnumerable<WeatherForecastIncludeCommand>>> GetAllWeatherForecast(string correlationId, CancellationToken cancellationToken = default) =>
+            await FlurlRequest("/api/v1/weatherforecast", correlationId)
                 .AllowAnyHttpStatus()
                 .GetAsync(cancellationToken)
                 .ReceiveResult<IEnumerable<WeatherForecastIncludeCommand>>();
-        }
     }
 }

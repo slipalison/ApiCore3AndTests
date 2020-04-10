@@ -1,5 +1,6 @@
 ﻿using ApiCore3AndTests.Domain.Entities;
 using ApiCore3AndTests.Domain.Interfaces.Services;
+using ApiCore3AndTests.Infra.Configurations.Filters.Cache;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,7 +24,7 @@ namespace ApiCore3AndTests.Api.Http.Controllers.V1
             _weatherForecastService = weatherForecastService;
         }
 
-        [HttpGet]
+        [HttpGet, CacheFilter(ExpireAt = 10, TimeSpanType = TimeSpanType.FromDays)]
         [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), Status200OK)]
         [ProducesResponseType(Status404NotFound)]
         public async Task<ActionResult<IEnumerable<WeatherForecast>>> Get([Required, FromHeader(Name = "X-Correlation-Id")] string correlationId)

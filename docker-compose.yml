@@ -9,6 +9,7 @@ services:
     depends_on:
       - db
       - elk
+      - redis
     environment:
       log.path: "http://elk:9200/"
       elastic.index: "apicore3andtests.api"
@@ -28,3 +29,8 @@ services:
       - "5601:5601"
       - "9900:9200"
       - "5044:5044"
+  
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
