@@ -17,9 +17,8 @@ namespace ApiCore3AndTests.Domain.Services
 
         public async Task<IEnumerable<WeatherForecast>> GetAll()
         {
-            var t = await _weatherForecastRepository.GetAll();
             var result = new List<WeatherForecast>();
-            await foreach (var dataPoint in t)
+            await foreach (var dataPoint in _weatherForecastRepository.GetAll())
                 result.Add(dataPoint);
 
             return result;

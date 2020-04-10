@@ -6,7 +6,7 @@ namespace ApiCore3AndTests.Domain.Interfaces.Repositories
 {
     public interface IWeatherForecastRepository
     {
-        Task<IAsyncEnumerable<WeatherForecast>> GetAll();
+        IAsyncEnumerable<WeatherForecast> GetAll();
 
         Task Add(WeatherForecast weatherForecast);
     }

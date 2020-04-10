@@ -21,7 +21,7 @@ namespace ApiCore3AndTests.Infra.Datas.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IAsyncEnumerable<WeatherForecast>> GetAll()
+        public IAsyncEnumerable<WeatherForecast> GetAll()
         {
             return _context.WeatherForecasts.AsAsyncEnumerable();
         }
